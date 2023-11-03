@@ -37,5 +37,6 @@ public class Register {
     public String valor() {
         return this.firstName + "-" + this.lastName;
     }
+
     
 }

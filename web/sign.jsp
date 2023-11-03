@@ -1,16 +1,8 @@
 <%@ page language="java" import="java.util.*, sys.*" errorPage="error.jsp" %>
 
-<jsp:useBean id="register" scope="page" class="sys.Login">
+<jsp:useBean id="register" scope="page" class="sys.Register">
  <jsp:setProperty name="register" property="*" />
 </jsp:useBean>
 
-<jsp:useBean id="monitor" scope="application" class="java.util.HashMap" />
+<%=register.valor() %>
 
-
-<%    
-    String display = "index.jsp";
-
-
-%>
-
-<jsp:forward page="<%= display %>" />  

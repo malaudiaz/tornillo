@@ -25,12 +25,12 @@
                             <form id="register-form" class="form" action="sign.jsp" method="post">
                                 <h3 class="text-center text-info">Registrase</h3>
                                 <div class="form-group">
-                                    <label for="firtsname" class="text-info">Nombre:</label><br>
-                                    <input type="text" name="firtsname" id="firtsname" class="form-control">
+                                    <label for="firstName" class="text-info">Nombre:</label><br>
+                                    <input type="text" name="firstName" id="firstName" class="form-control">
                                 </div>
                                 <div class="form-group">
-                                    <label for="lastname" class="text-info">Apellidos:</label><br>
-                                    <input type="text" name="lastname" id="lastname" class="form-control">
+                                    <label for="lastName" class="text-info">Apellidos:</label><br>
+                                    <input type="text" name="lastName" id="lastName" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label for="phone" class="text-info">Telef.</label><br>
