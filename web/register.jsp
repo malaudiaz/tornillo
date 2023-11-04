@@ -25,20 +25,8 @@
                             <form id="register-form" class="form" action="sign.jsp" method="post">
                                 <h3 class="text-center text-info">Registrase</h3>
                                 <div class="form-group">
-                                    <label for="firstName" class="text-info">Nombre:</label><br>
-                                    <input type="text" name="firstName" id="firstName" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="lastName" class="text-info">Apellidos:</label><br>
-                                    <input type="text" name="lastName" id="lastName" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="phone" class="text-info">Telef.</label><br>
-                                    <input type="text" name="phone" id="phone" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="email" class="text-info">Telef.</label><br>
-                                    <input type="email" name="email" id="email" class="form-control">
+                                    <label for="username" class="text-info">Usuario:</label><br>
+                                    <input type="text" name="username" id="username" class="form-control">
                                 </div>
                                 <div class="form-group pt-2">
                                     <label for="password" class="text-info">Contrasena:</label><br>
@@ -46,7 +34,7 @@
                                 </div>
                                 <div class="form-group pt-2">
                                     <label for="role" class="text-info">Rol:</label><br>
-                                    <select class="form-select" aria-label="Default select example">
+                                    <select class="form-select" id="role" name="role" aria-label="Default select example">
                                       <option value="1">Comprador</option>
                                       <option value="2">Vendedor</option>
                                     </select>                                    
