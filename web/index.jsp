@@ -13,6 +13,7 @@
             <div id="login-row" class="row justify-content-center align-items-center">
                 <div id="login-column" class="col-md-4">
                     <div id="login-box" class="col-md-12">
+                        
                         <form id="login-form" class="form" action="login.jsp" method="post">
                             <h3 class="text-center text-info">Login</h3>
                             <div class="form-group">
@@ -33,14 +34,25 @@
                                 <a class="ms-4" href="/WebApplication1/register.jsp" class="text-info">Registrase</a>
 
                                 <div>
+                                                                       
                                     <%
-                                        String letra = request.getParameter("m");
-                                        if (letra != null) { 
+                                        String m = request.getParameter("m");
+                                        if (m != null) {
+                                            if (m.equals("0")) {
                                             %>
-                                            <strong class="text-danger">Usuario o contraseña incorrecta</strong>
+                                                 <strong class="text-danger">Usuario o contraseña incorrecta</strong>
                                             <%
+                                            } else if (m.equals("1")) {
+                                            %>
+                                                 <strong class="text-danger">Se ha registrado satisfactoriamente</strong>
+                                            <%
+                                            }
+
                                         }
-                                    %>                                 
+                                    %>                               
+                                    
+                                    
+                                    
                                 </div>
                                 
                             </div>                                                           

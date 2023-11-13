@@ -6,8 +6,8 @@
 
 <jsp:useBean id="monitor" scope="application" class="java.util.HashMap" />
 
-
 <%    
+    
     String display = "index.jsp";
 
     try {
@@ -35,7 +35,7 @@
             display = "home.jsp";
 
         } else {
-            display = "index.jsp?m=1";            
+            display = "index.jsp?m=0";            
         }
         
     } catch (Exception e) {

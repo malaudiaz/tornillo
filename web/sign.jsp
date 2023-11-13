@@ -1,8 +1,20 @@
-<%@ page language="java" import="sys.*, java.util.*" session="true" errorPage="error.jsp" pageEncoding="UTF-8" contentType="text/html" %>
+<%@ page language="java" import="java.util.*, sys.*" errorPage="error.jsp" %>
 
 <jsp:useBean id="register" scope="page" class="sys.Register">
  <jsp:setProperty name="register" property="*" />
 </jsp:useBean>
 
-<%=register.register() %>
 
+<% 
+    
+    
+    String display = "register.jsp?m=1";
+    
+    if (!register.save()) {
+         display = "register.jsp?m=0";   
+    } else {
+         display = "login.jsp?m=1";           
+    }     
+
+    response.sendRedirect(display);
+%>

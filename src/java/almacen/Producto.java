@@ -5,6 +5,12 @@
  */
 package almacen;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import sys.checkLogin;
+
 /**
  *
  * @author Miguel David
@@ -75,5 +81,32 @@ public class Producto {
     }
 
 
+    public String getDataSave() {
+  	return "id:"+this.id+",title:"+this.title+",descrip:"+ this.descrip+",cantidad:"+this.cantidad+",precio:"+this.precio+",image:"+this.image;
+    }  
+    
+    
+    public boolean add() {
+        boolean res = false;    
+        
+         File archivo=new File(checkLogin.path + "productos.usr"); 
+         
+        if (!archivo.exists()) {
+        
+            try (PrintWriter sal = new PrintWriter(new FileWriter(archivo))) {
+                sal.print(this.getDataSave());
+                res = true;        
+            } catch (IOException ex) {
+                System.err.println(ex.getMessage());
+            }
+            
+        }
+        return res;
+    }
+    
+    public String valor() throws IOException {
+        return this.getDataSave();
+    }    
+    
     
 }

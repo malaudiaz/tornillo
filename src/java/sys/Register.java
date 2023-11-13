@@ -1,7 +1,6 @@
 package sys;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.*;
 
 public class Register {
     private String username = "";
@@ -22,18 +21,31 @@ public class Register {
         this.role = role;
     }
     
-    public String valor() {
-        return this.username + " -> " + this.role;
+    public String valor() throws IOException {
+        return this.getDataSave();
     }
-
-    public List<User> register() {
-        List<User> arr = new ArrayList<User>();
+    
+    public String getDataSave() {
+  	return "username:"+ this.username +",password:"+ this.password +",role:"+ this.role;
+    }  
+    
+    
+    public boolean save() {
+        boolean res = false;    
         
-        if (this.role.equals("1")) {
-            arr.add(new Customer("1", this.username));        
-        } else {
-            arr.add(new Vendor("2", this.username));
+         File archivo=new File(checkLogin.path + this.username + ".usr"); 
+         
+        if (!archivo.exists()) {
+        
+            try (PrintWriter sal = new PrintWriter(new FileWriter(archivo))) {
+                sal.print(this.getDataSave());
+                res = true;        
+            } catch (IOException ex) {
+                System.err.println(ex.getMessage());
+            }
+            
         }
-        return arr;
+        return res;
     }
+    
 }

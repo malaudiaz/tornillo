@@ -85,7 +85,7 @@
         <div class="container">
             <div class='d-flex justify-content-between pt-4'>
                 <h3>Almacen de Productos</h3>
-                <button class='btn btn-primary'>Adicionar Producto</button>
+                <a href="/WebApplication1/frmAddProduct.jsp" class="btn btn-primary">Adicionar Producto</a>
             </div>
 
             <table class="table table-hover">
@@ -105,16 +105,16 @@
                     <%
                         for (int i = 0; i < list.size(); i++) {
                     %>
-                            <tr>
+                            <tr style="vertical-align: middle">
                                 <td><%= list.get(i).getId() %></td> 
                                 <td><%= list.get(i).getTitle() %></td> 
                                 <td><%= list.get(i).getDescrip() %></td> 
-                               <td><%= list.get(i).getCantidad() %></td> 
-                               <td><%= list.get(i).getPrecio() %></td> 
-                               <td><img border="0" src="Imagenes/<%= list.get(i).getImage() %>"  width="40" height="40"></td> 
-                               <td class="d-flex">
-                                   <button class="btn-success">Editar</button>
-                                   <button class="btn-danger ms-2">Eliminar</button>
+                                <td style="text-align: center"><%= list.get(i).getCantidad() %></td> 
+                                <td style="text-align: right"><%= list.get(i).getPrecio() %></td> 
+                                <td style="text-align: center"><img border="0" src="Imagenes/<%= list.get(i).getImage() %>"  width="40" height="40"></td> 
+                               <td class="d-flex pt-3 pb-3">
+                                    <a href="#" class="btn btn-success">Editar</a>
+                                    <a href="#" class="btn btn-danger ms-2">Eliminar</a>
                                </td>
                             </tr>      
                     <%  }
@@ -122,7 +122,14 @@
         } %>        
 
                 </tbody>
-            </table>        
+            </table> 
+        
+        <div style="text-align: center">
+            <a href="/WebApplication1/index.jsp" class="btn btn-secondary">Regresar</a>            
+        </div>
+        
+
+        
         </div>
         
         

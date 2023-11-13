@@ -21,6 +21,23 @@
                     <div id="register-column" class="col-md-4">
                         
                         <div id="register-box" class="col-md-12 p-4" style="margin-top: 120px; background: #EAEAEA;">
+                            <%
+                                String m = request.getParameter("m");
+                                if (m != null) {
+                                    if (m.equals("0")) {
+                                    %>
+                                         <strong class="text-danger">Error al registrar nuevo usuario</strong>
+                                    <%
+                                    } else if (m.equals("1")) {
+                                    %>
+                                         <strong class="text-danger">Se ha registrado satisfactoriamente</strong>
+                                    <%
+                                    }
+                                     
+                                }
+                            %>                               
+
+                            
                             
                             <form id="register-form" class="form" action="sign.jsp" method="post">
                                 <h3 class="text-center text-info">Registrase</h3>
